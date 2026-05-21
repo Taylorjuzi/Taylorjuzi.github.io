@@ -168,7 +168,47 @@
         .lightbox-btn:hover { color: var(--neon-cyan); text-shadow: 0 0 20px var(--neon-cyan); scale: 1.1;}
         .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; }
         .lightbox-counter { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.1); color: var(--neon-cyan); padding: 8px 25px; border-radius: 30px; font-size: 1rem; letter-spacing: 3px; font-weight: bold; backdrop-filter: blur(10px); z-index: 10001; }
-    </style>
+    /* ==========================================
+           📱 移动端 (手机) 深度适配优化补丁
+           ========================================== */
+        @media (max-width: 768px) {
+            /* 1. 隐藏发光鼠标，恢复系统默认触摸交互 */
+            .custom-cursor, .mouse-particle { display: none !important; }
+            body, a, button, .portfolio-item, .masonry-item, .resume-card-item, .ty-card, .nav-logo { cursor: auto !important; }
+
+            /* 2. 缩小首屏字体和照片卡片区，防止撑破屏幕边缘 */
+            .title-xxl { font-size: 2.8rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero-contact-list { flex-wrap: wrap; justify-content: center; line-height: 1.8; }
+            .photo-stack-container { transform: scale(0.65); height: 260px; margin: 20px auto; }
+            .hero { padding-top: 140px; min-height: 85vh;}
+
+            /* 3. 修复画廊大图，让手机端图片占满屏幕宽度 (95vw) */
+            .lightbox-img-wrapper { width: 100vw; height: 80vh; }
+            #lightbox-img { max-width: 95%; max-height: 90%; }
+            .lightbox-btn { width: 50px; height: 50px; font-size: 35px; }
+            .lightbox-prev { left: 0; }
+            .lightbox-next { right: 0; }
+            .lightbox-close { top: 15px; right: 20px; font-size: 45px; }
+
+            /* 4. 手机没有悬停(Hover)，让作品集的名字默认显示出来，加深渐变背景防看不清 */
+            .portfolio-info, .masonry-info { 
+                opacity: 1; 
+                background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+                padding: 15px;
+            }
+            .portfolio-info h3, .masonry-info h3 { font-size: 1.1rem; }
+
+            /* 5. 调整“关于我”模块为上下堆叠排版 */
+            .about-grid { flex-direction: column; gap: 30px; }
+            .about-stats { width: 100%; gap: 15px; }
+            .stat-box { padding: 25px 15px; }
+            .stat-box h3 { font-size: 2.5rem; }
+            
+            /* 6. 调整履历卡片内边距 */
+            .timeline-item { padding: 20px 15px; }
+            .timeline::before { left: -32px; }
+        }</style>
 </head>
 <body>
 
