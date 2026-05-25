@@ -3,6 +3,7 @@
 // ==========================================
 
 const siteConfig = {
+    heroBg: "./images/hero-bg.jpg",
     // 1. 基础联系方式配置
     contact: {
         phone: "+86 18612700173",
