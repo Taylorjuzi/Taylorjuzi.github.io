@@ -3,8 +3,10 @@
 // ==========================================
 
 const siteConfig = {
+    // 1. 首屏背景配置
     heroBg: "./images/hero-bg.jpg",
-    // 1. 基础联系方式配置
+
+    // 2. 基础联系方式配置
     contact: {
         phone: "+86 18612700173",
         email: "1658116541@qq.com",
@@ -13,7 +15,7 @@ const siteConfig = {
         location_en: "📍 Beijing"
     },
 
-    // 2. 首屏 4 张卡片图片配置 (推荐放在 images 文件夹下)
+    // 3. 首屏 4 张卡片图片配置 (推荐放在 images 文件夹下)
     heroCards: [
         "./images/hero-1.jpg", // 第1张图
         "./images/hero-2.jpg", // 第2张图
@@ -21,13 +23,12 @@ const siteConfig = {
         "./images/hero-4.jpg"  // 第4张图
     ],
 
-    // 3. 精选作品集 (6个封面及点开后的内页大图)
+    // 4. 精选作品集 (6个封面及点开后的内页大图)
     portfolioCovers: [
         { 
             img: "./images/port-1.jpg", 
             title_zh: "品牌设计", title_en: "Brand Design", 
             desc_zh: "品牌视觉识别系统设计", desc_en: "Brand Identity System Design",
-            // 点开模块1后展示的图片列表，加几张填几张
             images: [
                 "./images/port-1-detail1.jpg", 
                 "./images/port-1-detail2.jpg", 
@@ -38,7 +39,6 @@ const siteConfig = {
             img: "./images/port-2.jpg", 
             title_zh: "视觉 KV ", title_en: "Key Visual Design", 
             desc_zh: "品牌主视觉 KV", desc_en: "Brand Core Key Visual Design",
-            // 点开模块2后展示的图片列表
             images: [
                 "./images/port-2-detail1.jpg",
                 "./images/port-2-detail2.jpg"
@@ -78,11 +78,11 @@ const siteConfig = {
         }
     ],
 
-    // 4. 瀑布流散装作品配置 (传多少显示多少)
-    masonry: [
-        "./images/calculator_on_table.jpg", // 你的第1张散图
-        "./images/my-design2.jpg",          // 你的第2张散图
-        "./images/my-design3.jpg"           // 你的第3张散图
-        // ... 想加多少张就继续往下写（注意最后一行不用加逗号）
-    ]
+    // 5. 瀑布流散装作品配置 (极简自动读取模式)
+    // 只要图片在 images 文件夹里命名为 1.jpg, 2.jpg... 在这里改对总数量即可！
+    masonry: {
+        count: 12,                       // 👈 你现在有几张散图，就把这里改成几！
+        imagePathPrefix: "./images/",    // 图片存放的文件夹路径
+        imageExtension: ".jpg"           // 图片的后缀名
+    }
 };
