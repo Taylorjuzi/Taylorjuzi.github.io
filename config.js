@@ -78,11 +78,11 @@ const siteConfig = {
         }
     ],
 
-    // 4. 瀑布流散装作品配置
-    masonry: {
-        count: 32, // 你想要展示的散图总数
-        // 把散图命名为 m1.jpg, m2.jpg... 一直到 m32.jpg，放在 images 文件夹下
-        imagePathPrefix: "./images/m", 
-        imageExtension: ".jpg"
-    }
+    // 4. 瀑布流散装作品配置 (传多少显示多少)
+    masonry: [
+        "./images/calculator_on_table.jpg", // 你的第1张散图
+        "./images/my-design2.jpg",          // 你的第2张散图
+        "./images/my-design3.jpg"           // 你的第3张散图
+        // ... 想加多少张就继续往下写（注意最后一行不用加逗号）
+    ]
 };
